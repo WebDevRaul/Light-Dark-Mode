@@ -1,0 +1,43 @@
+$black: rgb(40, 40, 40);
+$white: rgb(220, 220, 220);
+$green: rgb(105, 170, 0);
+$dark-green: rgba(105, 170, 0, .7);
+
+:root {
+  --color-page-background: #{$white};
+  --color-text: #{$black};
+};
+
+.dark-theme {
+  --color-page-background: #{$black};
+  --color-text: #{$white};
+};
+
+@mixin responsive($size) {
+  @media only screen and (min-width: $size) {
+    @content
+  };
+};
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+};
+
+html, body {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  @include responsive(768px) {
+    font-size: 22px;
+  };
+};
+
+body {
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+};
+
+ul {
+  list-style: none;
+};
